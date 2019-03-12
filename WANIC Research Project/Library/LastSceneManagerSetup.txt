@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Will's Scene.unity
-=======
 - path: Assets/Scenes/Kyle's Scene.unity
->>>>>>> 37b7840c55c2d42a69e99f2f2253aa0832aba39d
   isLoaded: 1
   isActive: 1
