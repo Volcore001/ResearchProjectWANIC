@@ -7,6 +7,10 @@ public struct Cell {
     public int Medium;
     public int Low;
 
+    public override string ToString()
+    {
+        return "H: " + High + " M: " + Medium + " Low: " + Low;
+    }
     public void init()
     {
         High = 0;

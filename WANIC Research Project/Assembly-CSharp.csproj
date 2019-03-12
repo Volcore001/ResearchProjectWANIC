@@ -296,9 +296,6 @@
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>C:/Users/william.siauw/Documents/GitHub/ResearchProjectWANIC/WANIC Research Project/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Purchasing">
-      <HintPath>C:/Users/william.siauw/Documents/GitHub/ResearchProjectWANIC/WANIC Research Project/Library/PackageCache/com.unity.purchasing@2.0.3/UnityEngine.Purchasing.dll</HintPath>
-    </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
     </Reference>

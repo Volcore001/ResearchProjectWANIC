@@ -9,11 +9,14 @@ public class Piece : MonoBehaviour {
 
     [Tooltip("The size of the piece, either 1, 2, or 3 representing small medium or large respectively.")]
     public int Size;
-	// Use this for initialization
-	void Start () {
+
+    [Tooltip("The corresponding place of the piece, either 0 - 15, representing the 16 spaces on the board.")]
+    public int Index;
+    // Use this for initialization
+    void Start () {
 		
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		
