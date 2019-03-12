@@ -6,17 +6,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    void PerfectPlayer()
+    public void PerfectPlayer()
     {
         //is there a victor
         if(Check() == 0)
@@ -65,14 +55,17 @@ public class GameManager : MonoBehaviour {
             if(victor > 0)
             {
                 //Player one
+                Debug.Log("Player One");
             }
             if (victor < 0)
             {
                 //Player two
+                Debug.Log("Player Two");
             }
             if (victor == 0)
             {
                 //50/50 chance
+                Debug.Log("50/50 chance");
             }
 
         }
@@ -81,10 +74,12 @@ public class GameManager : MonoBehaviour {
             if(Check() == 1)
             {
                 //Player one
+                Debug.Log("Player One");
             }
             if (Check() == 2)
             {
                 //Player two
+                Debug.Log("Player Two");
             }
         }
     }
