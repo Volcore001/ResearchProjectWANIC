@@ -2,12 +2,16 @@
 
 public class Board : MonoBehaviour {
 
-    public Cell[,] GameBoard = new Cell[4, 4];
-    static Board instance;
-    private void Awake()
+    public static Cell[,] GameBoard = new Cell[4, 4];
+
+    public Board (Board board)
     {
-        instance = this;
+        if (board != null)
+        {
+            //GameBoard = board.GameBoard;
+        }
     }
+
     public void Update()
     {
         //Debug.Log("Board 4, 4: " + GameBoard[3,3].ToString());
@@ -55,8 +59,7 @@ public class Board : MonoBehaviour {
                 break;
         }
     }
-    public static Board GetInstance()
-    { return instance; }
+
     // Use this for initialization
     void Start () {
         foreach (Cell c in GameBoard)
@@ -65,8 +68,13 @@ public class Board : MonoBehaviour {
         }
     }
 
-    public Cell[,] Get ()
+    public static Cell[,] Get ()
     {
         return GameBoard;
+    }
+
+    public Board GetBoard()
+    {
+        return this;
     }
 }

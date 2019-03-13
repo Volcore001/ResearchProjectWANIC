@@ -17,55 +17,55 @@ public class GameManager : MonoBehaviour {
             {
                 for (int j = 0; j < 4; j++)
                 {
-                    if(Board.GetInstance().Get()[i, j].High == 1)
+                    if(Board.Get()[i, j].High == 1)
                     {
                         P1++;
                     }
-                    if (Board.GetInstance().Get()[i, j].High == 2)
+                    if (Board.Get()[i, j].High == 2)
                     {
                         P2++;
                     }
-                    if (Board.GetInstance().Get()[i, j].Medium == 1)
+                    if (Board.Get()[i, j].Medium == 1)
                     {
                         P1++;
                     }
-                    if (Board.GetInstance().Get()[i, j].Medium == 2)
+                    if (Board.Get()[i, j].Medium == 2)
                     {
                         P2++;
                     }
-                    if (Board.GetInstance().Get()[i, j].Low == 1)
+                    if (Board.Get()[i, j].Low == 1)
                     {
                         P1++;
                     }
-                    if (Board.GetInstance().Get()[i, j].Low == 2)
+                    if (Board.Get()[i, j].Low == 2)
                     {
                         P2++;
                     }
                 }
             }
-            int victor = 0;
+            Vector2 victor = new Vector2(0,0);
             if(P1 >= P2)
             {
-                victor = Moves(true, Board.GetInstance());
+                victor = Moves(true, Board.GameBoard);
             }
             else
             {
-                victor = Moves(false, Board.GetInstance());
+                victor = Moves(false, Board.GameBoard);
             }
-            if(victor > 0)
+            if(victor.x > victor.y)
             {
                 //Player one
-                Debug.Log("Player One");
+                Debug.Log("Player One" + victor.ToString());
             }
-            if (victor < 0)
+            if (victor.x < victor.y)
             {
                 //Player two
-                Debug.Log("Player Two");
+                Debug.Log("Player Two" + victor.ToString());
             }
-            if (victor == 0)
+            if (victor.x == victor.y)
             {
                 //50/50 chance
-                Debug.Log("50/50 chance");
+                Debug.Log("50/50 chance" + victor.ToString());
             }
 
         }
@@ -84,59 +84,67 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    int Moves(bool PlayerOneTurn, Board board)
+    Vector2 Moves(bool PlayerOneTurn, Cell[,] board)
     {
-        Board Moved = board;
+        Cell[,] Moved = new Cell[4,4];
+        Moved = board;
+
         if (Check() != 0)
         {
+            Vector2 victor = new Vector2(0, 0);
+            //victor.Set(0.0f, 0.0f);
             if (Check() == 1)
             {
-                return 1;
+                victor.Set(1, 0);
             }
-            else
+            else if (Check() == 2)
             {
-                return -1;
+                victor.Set(0, 1);
             }
+            return victor;
         }
-        int value = 0;
+        Vector2 value = new Vector2(0, 0);
         for (int i = 0; i < 4; i++)
         {
             for (int j = 0; j < 4; j++)
             {
-                if (Moved.Get()[i, j].High == 0 && Moved.Get()[i, j].Medium == 0 && Moved.Get()[i, j].Low == 0)
+                if (Moved[i, j].High == 0 && Moved[i, j].Medium == 0 && Moved[i, j].Low == 0)
                 {
                     if(PlayerOneTurn)
                     {
-                        Moved.ChangeCell(i, j, 1);
+                        Moved[i,j].Low = 1;
                     }else
                     {
-                        Moved.ChangeCell(i, j, 4);
+                        Moved[i, j].Low = 2;
                     }
                     value += Moves(!PlayerOneTurn, Moved);
+                    Moved[i, j].Low = 0;
                 }
-                if (Moved.Get()[i, j].High == 0 && Moved.Get()[i, j].Medium == 0)
+                if (Moved[i, j].High == 0 && Moved[i, j].Medium == 0)
                 {
                     if (PlayerOneTurn)
                     {
-                        Moved.ChangeCell(i, j, 2);
+                        Moved[i, j].Medium = 1;
                     }
                     else
                     {
-                        Moved.ChangeCell(i, j, 5);
+                        Moved[i, j].Medium = 2;
                     }
                     value += Moves(!PlayerOneTurn, Moved);
+                    Moved[i, j].Medium = 0;
                 }
-                if (Moved.Get()[i, j].High == 0)
+                if (Moved[i, j].High == 0)
                 {
                     if (PlayerOneTurn)
                     {
-                        Moved.ChangeCell(i, j, 3);
+                        Moved[i, j].High = 1;
                     }
                     else
                     {
-                        Moved.ChangeCell(i, j, 6);
+                        Moved[i, j].High = 2;
                     }
                     value += Moves(!PlayerOneTurn, Moved);
+                    Moved[i, j].High = 0;
                 }
             }
         }
@@ -150,17 +158,17 @@ public class GameManager : MonoBehaviour {
         {
             for (int j = 0; j < 4; j++)
             {
-                if(Board.GetInstance().Get()[i, j].High != 0)
+                if(Board.Get()[i, j].High != 0)
                 {
-                    board2[i, j] = Board.GetInstance().Get()[i, j].High;
+                    board2[i, j] = Board.Get()[i, j].High;
                 }
-                else if(Board.GetInstance().Get()[i, j].Medium != 0)
+                else if(Board.Get()[i, j].Medium != 0)
                 {
-                    board2[i, j] = Board.GetInstance().Get()[i, j].Medium;
+                    board2[i, j] = Board.Get()[i, j].Medium;
                 }
                 else
                 {
-                    board2[i, j] = Board.GetInstance().Get()[i, j].Low;
+                    board2[i, j] = Board.Get()[i, j].Low;
                 }
             }
         }
@@ -223,6 +231,22 @@ public class GameManager : MonoBehaviour {
                 //Player Two Wins
                 return 2;
             }
+        }
+        bool full = true;
+        for (int i = 0; i < 4; i++)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if(Board.Get()[i, j].High == 0)
+                {
+                    full = false;
+                }
+                Debug.Log(Board.Get()[i, j].High.ToString());
+            }
+        }
+        if(full)
+        {
+            return -1;
         }
         //No victor
         return 0;
