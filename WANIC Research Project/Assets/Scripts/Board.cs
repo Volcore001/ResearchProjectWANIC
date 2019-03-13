@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
-
+using UnityEngine.UI;
 public class Board : MonoBehaviour {
 
     public static Cell[,] GameBoard = new Cell[4, 4];
-
+    public static int PlayerTurn = 1;
     public Board (Board board)
     {
         if (board != null)
@@ -24,11 +24,18 @@ public class Board : MonoBehaviour {
         int index = p.Index;
         if (p.Player == 2)
             val += 3;
-        else if (p.Player == 0)
-            val = 0;
         x = index % 4;
         y = index / 4;
+    
         ChangeCell(x, y, val);
+        if (val != 0)
+        {
+            p.GetComponent<Image>().color = p.NewColor;
+            if (PlayerTurn == 1)
+                PlayerTurn = 2;
+            else
+                PlayerTurn = 1;
+        }
     }
     public void ChangeCell(int boardX, int boardY, int value) // Value: 0 = none / default, 1 = P:1 low, 2 = P:1 medium, 3 = P:1 high, 4 = P:2 low, 5 = P:2 medium, 6 = P:2 high
     {
