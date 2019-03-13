@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Piece : MonoBehaviour {
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
+public class Piece : MonoBehaviour, IPointerEnterHandler
+{
 
     [Tooltip("Which player this piece belongs to, 1 for player 1, 2 for player 2")]
     public int Player;
@@ -12,13 +14,33 @@ public class Piece : MonoBehaviour {
 
     [Tooltip("The corresponding place of the piece, either 0 - 15, representing the 16 spaces on the board.")]
     public int Index;
+    public int PlayerTurn = 1;
     // Use this for initialization
     void Start () {
 		
 	}
+    void OnMouseOver()
+    {
 
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
+    // Update is called once per frame
+    void Update () {     
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Color NewColor = new Color();
+        switch (PlayerTurn)
+        {
+            case 1:
+                NewColor = new Color(255, 0, 0);
+                break;
+            case 2:
+                NewColor = new Color(0, 0, 255);
+                break;
+        }
+        ColorBlock colorVar = GetComponent<Button>().colors;
+        colorVar.highlightedColor = NewColor;
+        GetComponent<Button>().colors = colorVar;
+    }
 }
