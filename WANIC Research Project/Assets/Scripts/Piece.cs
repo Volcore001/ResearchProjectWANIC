@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/******************************************************************************/
+/*!
+\file   Piece.cs
+\author William Siauw
+\brief  
+    This class contains all of the needed information of a piece. Attach this to a button to allow all of the following information
+    to be sent to the gameboard of the Board class.
+*/
+/******************************************************************************/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -21,10 +30,6 @@ public class Piece : MonoBehaviour, IPointerEnterHandler
     void Start () {
 		
 	}
-    void OnMouseOver()
-    {
-
-    }
     // Update is called once per frame
     void Update () {     
     }

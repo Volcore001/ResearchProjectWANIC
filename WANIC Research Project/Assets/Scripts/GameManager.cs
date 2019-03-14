@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/******************************************************************************/
+/*!
+\file   GameManager.cs
+\author Kyle Jamison, William Siauw
+\brief  
+    This class contains the algorthims to calculate the winner and play a board.
+*/
+/******************************************************************************/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

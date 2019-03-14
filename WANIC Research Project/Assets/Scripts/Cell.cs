@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/******************************************************************************/
+/*!
+\file   GameManager.cs
+\author Kyle Jamison, William Siauw
+\brief  
+    This class contains the information for each cell of the game board
+*/
+/******************************************************************************/
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
