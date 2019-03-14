@@ -31,7 +31,6 @@ public class Piece : MonoBehaviour, IPointerEnterHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("Player Turn: " + Board.PlayerTurn);
         switch (Board.PlayerTurn)
         {
             case 1:

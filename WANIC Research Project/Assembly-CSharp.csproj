@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\Board.cs" />
     <Compile Include="Assets\Scripts\Cell.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Node.cs" />
     <Compile Include="Assets\Scripts\Piece.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/bills/Documents/GitHub/ResearchProjectWANIC/WANIC Research Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
