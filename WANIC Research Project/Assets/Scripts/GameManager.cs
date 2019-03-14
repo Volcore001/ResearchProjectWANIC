@@ -86,14 +86,72 @@ public class GameManager : MonoBehaviour {
 
     Vector2 Moves(bool PlayerOneTurn, Cell[,] board)
     {
-        Cell[,] Moved = new Cell[4,4];
-        for (int i = 0; i < 4; i++)
-        {
-            for (int j = 0; j < 4; j++)
-            {
-                Moved[i, j] = board[i, j];
-            }
-        }
+        Cell[,] PlayerBoard = new Cell[4,4];
+        //Building the this Manualy because it has to be
+        PlayerBoard[0, 0].Low = board[0, 0].Low;
+        PlayerBoard[0, 0].Medium = board[0, 0].Medium;
+        PlayerBoard[0, 0].High = board[0, 0].High;
+
+        PlayerBoard[0, 1].Low = board[0, 1].Low;
+        PlayerBoard[0, 1].Medium = board[0, 1].Medium;
+        PlayerBoard[0, 1].High = board[0, 1].High;
+
+        PlayerBoard[0, 2].Low = board[0, 2].Low;
+        PlayerBoard[0, 2].Medium = board[0, 2].Medium;
+        PlayerBoard[0, 2].High = board[0, 2].High;
+
+        PlayerBoard[0, 3].Low = board[0, 3].Low;
+        PlayerBoard[0, 3].Medium = board[0, 3].Medium;
+        PlayerBoard[0, 3].High = board[0, 3].High;
+        //1
+        PlayerBoard[1, 0].Low = board[1, 0].Low;
+        PlayerBoard[1, 0].Medium = board[1, 0].Medium;
+        PlayerBoard[1, 0].High = board[1, 0].High;
+
+        PlayerBoard[1, 1].Low = board[1, 1].Low;
+        PlayerBoard[1, 1].Medium = board[1, 1].Medium;
+        PlayerBoard[1, 1].High = board[1, 1].High;
+
+        PlayerBoard[1, 2].Low = board[1, 2].Low;
+        PlayerBoard[1, 2].Medium = board[1, 2].Medium;
+        PlayerBoard[1, 2].High = board[1, 2].High;
+
+        PlayerBoard[1, 3].Low = board[1, 3].Low;
+        PlayerBoard[1, 3].Medium = board[1, 3].Medium;
+        PlayerBoard[1, 3].High = board[1, 3].High;
+        //2
+        PlayerBoard[2, 0].Low = board[2, 0].Low;
+        PlayerBoard[2, 0].Medium = board[2, 0].Medium;
+        PlayerBoard[2, 0].High = board[2, 0].High;
+
+        PlayerBoard[2, 1].Low = board[2, 1].Low;
+        PlayerBoard[2, 1].Medium = board[2, 1].Medium;
+        PlayerBoard[2, 1].High = board[2, 1].High;
+
+        PlayerBoard[2, 2].Low = board[2, 2].Low;
+        PlayerBoard[2, 2].Medium = board[2, 2].Medium;
+        PlayerBoard[2, 2].High = board[2, 2].High;
+
+        PlayerBoard[2, 3].Low = board[2, 3].Low;
+        PlayerBoard[2, 3].Medium = board[2, 3].Medium;
+        PlayerBoard[2, 3].High = board[2, 3].High;
+        //3
+        PlayerBoard[3, 0].Low = board[3, 0].Low;
+        PlayerBoard[3, 0].Medium = board[3, 0].Medium;
+        PlayerBoard[3, 0].High = board[3, 0].High;
+
+        PlayerBoard[3, 1].Low = board[3, 1].Low;
+        PlayerBoard[3, 1].Medium = board[3, 1].Medium;
+        PlayerBoard[3, 1].High = board[3, 1].High;
+
+        PlayerBoard[3, 2].Low = board[3, 2].Low;
+        PlayerBoard[3, 2].Medium = board[3, 2].Medium;
+        PlayerBoard[3, 2].High = board[3, 2].High;
+
+        PlayerBoard[3, 3].Low = board[3, 3].Low;
+        PlayerBoard[3, 3].Medium = board[3, 3].Medium;
+        PlayerBoard[3, 3].High = board[3, 3].High;
+
         if (Check() != 0)
         {
             Vector2 victor = new Vector2(0, 0);
@@ -109,168 +167,651 @@ public class GameManager : MonoBehaviour {
             return victor;
         }
         Vector2 value = new Vector2(0, 0);
-        for (int i = 0; i < 1; i++)
+
+        //Row 0
+        // column 0
+        if ((PlayerBoard[0, 0].High == 0) && (PlayerBoard[0, 0].Medium == 0) && (PlayerBoard[0, 0].Low == 0))
         {
-            // Row 0
-            if (Moved[i, 0].High == 0 && Moved[i, 0].Medium == 0 && Moved[i, 0].Low == 0)
+            if(PlayerOneTurn)
             {
-                if(PlayerOneTurn)
-                {
-                    Moved[i, 0].Low = 1;
-                }else
-                {
-                    Moved[i, 0].Low = 2;
-                }
-                value += Moves(!PlayerOneTurn, Moved);
-                Moved[i, 0].Low = 0;
-            }
-            if (Moved[i, 0].High == 0 && Moved[i, 0].Medium == 0)
+                PlayerBoard[0, 0].Low = 1;
+            }else
             {
-                if (PlayerOneTurn)
-                {
-                    Moved[i, 0].Medium = 1;
-                }
-                else
-                {
-                    Moved[i, 0].Medium = 2;
-                }
-                value += Moves(!PlayerOneTurn, Moved);
-                Moved[i, 0].Medium = 0;
+                PlayerBoard[0, 0].Low = 2;
             }
-            if (Moved[i, 0].High == 0)
-            {
-                if (PlayerOneTurn)
-                {
-                    Moved[i, 0].High = 1;
-                }
-                else
-                {
-                    Moved[i, 0].High = 2;
-                }
-                value += Moves(!PlayerOneTurn, Moved);
-                Moved[i, 0].High = 0;
-            }
-            //Row 1
-            if (Moved[i, 1].High == 0 && Moved[i, 1].Medium == 0 && Moved[i, 1].Low == 0)
-            {
-                if (PlayerOneTurn)
-                {
-                    Moved[i, 1].Low = 1;
-                }
-                else
-                {
-                    Moved[i, 1].Low = 2;
-                }
-                value += Moves(!PlayerOneTurn, Moved);
-                Moved[i, 1].Low = 0;
-            }
-            if (Moved[i, 1].High == 0 && Moved[i, 1].Medium == 0)
-            {
-                if (PlayerOneTurn)
-                {
-                    Moved[i, 1].Medium = 1;
-                }
-                else
-                {
-                    Moved[i, 1].Medium = 2;
-                }
-                value += Moves(!PlayerOneTurn, Moved);
-                Moved[i, 1].Medium = 0;
-            }
-            if (Moved[i, 1].High == 0)
-            {
-                if (PlayerOneTurn)
-                {
-                    Moved[i, 1].High = 1;
-                }
-                else
-                {
-                    Moved[i, 1].High = 2;
-                }
-                value += Moves(!PlayerOneTurn, Moved);
-                Moved[i, 1].High = 0;
-            }
-            //Row 2
-            if (Moved[i, 2].High == 0 && Moved[i, 2].Medium == 0 && Moved[i, 2].Low == 0)
-            {
-                if (PlayerOneTurn)
-                {
-                    Moved[i, 2].Low = 1;
-                }
-                else
-                {
-                    Moved[i, 2].Low = 2;
-                }
-                value += Moves(!PlayerOneTurn, Moved);
-                Moved[i, 2].Low = 0;
-            }
-            if (Moved[i, 2].High == 0 && Moved[i, 2].Medium == 0)
-            {
-                if (PlayerOneTurn)
-                {
-                    Moved[i, 2].Medium = 1;
-                }
-                else
-                {
-                    Moved[i, 2].Medium = 2;
-                }
-                value += Moves(!PlayerOneTurn, Moved);
-                Moved[i, 2].Medium = 0;
-            }
-            if (Moved[i, 2].High == 0)
-            {
-                if (PlayerOneTurn)
-                {
-                    Moved[i, 2].High = 1;
-                }
-                else
-                {
-                    Moved[i, 2].High = 2;
-                }
-                value += Moves(!PlayerOneTurn, Moved);
-                Moved[i, 2].High = 0;
-            }
-            //Row 3
-            if (Moved[i, 3].High == 0 && Moved[i, 3].Medium == 0 && Moved[i, 3].Low == 0)
-            {
-                if (PlayerOneTurn)
-                {
-                    Moved[i, 3].Low = 1;
-                }
-                else
-                {
-                    Moved[i, 3].Low = 2;
-                }
-                value += Moves(!PlayerOneTurn, Moved);
-                Moved[i, 3].Low = 0;
-            }
-            if (Moved[i, 3].High == 0 && Moved[i, 3].Medium == 0)
-            {
-                if (PlayerOneTurn)
-                {
-                    Moved[i, 3].Medium = 1;
-                }
-                else
-                {
-                    Moved[i, 3].Medium = 2;
-                }
-                value += Moves(!PlayerOneTurn, Moved);
-                Moved[i, 3].Medium = 0;
-            }
-            if (Moved[i, 3].High == 0)
-            {
-                if (PlayerOneTurn)
-                {
-                    Moved[i, 3].High = 1;
-                }
-                else
-                {
-                    Moved[i, 3].High = 2;
-                }
-                value += Moves(!PlayerOneTurn, Moved);
-                Moved[i, 3].High = 0;
-            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[0, 0].Low = 0;
         }
+        if ((PlayerBoard[0, 0].High == 0) && (PlayerBoard[0, 0].Medium == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[0, 0].Medium = 1;
+            }
+            else
+            {
+                PlayerBoard[0, 0].Medium = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[0, 0].Medium = 0;
+        }
+        if (PlayerBoard[0, 0].High == 0)
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[0, 0].High = 1;
+            }
+            else
+            {
+                PlayerBoard[0, 0].High = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[0, 0].High = 0;
+        }
+        //column 1
+        if ((PlayerBoard[0, 1].High == 0) && (PlayerBoard[0, 1].Medium == 0) && (PlayerBoard[0, 1].Low == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[0, 1].Low = 1;
+            }
+            else
+            {
+                PlayerBoard[0, 1].Low = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[0, 1].Low = 0;
+        }
+        if ((PlayerBoard[0, 1].High == 0) && (PlayerBoard[0, 1].Medium == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[0, 1].Medium = 1;
+            }
+            else
+            {
+                PlayerBoard[0, 1].Medium = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[0, 1].Medium = 0;
+        }
+        if (PlayerBoard[0, 1].High == 0)
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[0, 1].High = 1;
+            }
+            else
+            {
+                PlayerBoard[0, 1].High = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[0, 1].High = 0;
+        }
+        //column 2
+        if ((PlayerBoard[0, 2].High == 0) && (PlayerBoard[0, 2].Medium == 0) && (PlayerBoard[0, 2].Low == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[0, 2].Low = 1;
+            }
+            else
+            {
+                PlayerBoard[0, 2].Low = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[0, 2].Low = 0;
+        }
+        if ((PlayerBoard[0, 2].High == 0) && (PlayerBoard[0, 2].Medium == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[0, 2].Medium = 1;
+            }
+            else
+            {
+                PlayerBoard[0, 2].Medium = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[0, 2].Medium = 0;
+        }
+        if (PlayerBoard[0, 2].High == 0)
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[0, 2].High = 1;
+            }
+            else
+            {
+                PlayerBoard[0, 2].High = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[0, 2].High = 0;
+        }
+        //column 3
+        if ((PlayerBoard[0, 3].High == 0) && (PlayerBoard[0, 3].Medium == 0) && (PlayerBoard[0, 3].Low == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[0, 3].Low = 1;
+            }
+            else
+            {
+                PlayerBoard[0, 3].Low = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[0, 3].Low = 0;
+        }
+        if ((PlayerBoard[0, 3].High == 0) && (PlayerBoard[0, 3].Medium == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[0, 3].Medium = 1;
+            }
+            else
+            {
+                PlayerBoard[0, 3].Medium = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[0, 3].Medium = 0;
+        }
+        if (PlayerBoard[0, 3].High == 0)
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[0, 3].High = 1;
+            }
+            else
+            {
+                PlayerBoard[0, 3].High = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[0, 3].High = 0;
+        }
+        //Row 1
+        // column 0
+        if ((PlayerBoard[1, 0].High == 0) && (PlayerBoard[1, 0].Medium == 0) && (PlayerBoard[1, 0].Low == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[1, 0].Low = 1;
+            }
+            else
+            {
+                PlayerBoard[1, 0].Low = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[1, 0].Low = 0;
+        }
+        if ((PlayerBoard[1, 0].High == 0) && (PlayerBoard[1, 0].Medium == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[1, 0].Medium = 1;
+            }
+            else
+            {
+                PlayerBoard[1, 0].Medium = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[1, 0].Medium = 0;
+        }
+        if (PlayerBoard[1, 0].High == 0)
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[1, 0].High = 1;
+            }
+            else
+            {
+                PlayerBoard[1, 0].High = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[1, 0].High = 0;
+        }
+        //column 1
+        if ((PlayerBoard[1, 1].High == 0) && (PlayerBoard[1, 1].Medium == 0) && (PlayerBoard[1, 1].Low == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[1, 1].Low = 1;
+            }
+            else
+            {
+                PlayerBoard[1, 1].Low = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[1, 1].Low = 0;
+        }
+        if ((PlayerBoard[1, 1].High == 0) && (PlayerBoard[1, 1].Medium == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[1, 1].Medium = 1;
+            }
+            else
+            {
+                PlayerBoard[1, 1].Medium = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[1, 1].Medium = 0;
+        }
+        if (PlayerBoard[1, 1].High == 0)
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[1, 1].High = 1;
+            }
+            else
+            {
+                PlayerBoard[1, 1].High = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[1, 1].High = 0;
+        }
+        //column 2
+        if ((PlayerBoard[1, 2].High == 0) && (PlayerBoard[1, 2].Medium == 0) && (PlayerBoard[1, 2].Low == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[1, 2].Low = 1;
+            }
+            else
+            {
+                PlayerBoard[1, 2].Low = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[1, 2].Low = 0;
+        }
+        if ((PlayerBoard[1, 2].High == 0) && (PlayerBoard[1, 2].Medium == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[1, 2].Medium = 1;
+            }
+            else
+            {
+                PlayerBoard[1, 2].Medium = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[1, 2].Medium = 0;
+        }
+        if (PlayerBoard[1, 2].High == 0)
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[1, 2].High = 1;
+            }
+            else
+            {
+                PlayerBoard[1, 2].High = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[1, 2].High = 0;
+        }
+        //column 3
+        if ((PlayerBoard[1, 3].High == 0) && (PlayerBoard[1, 3].Medium == 0) && (PlayerBoard[1, 3].Low == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[1, 3].Low = 1;
+            }
+            else
+            {
+                PlayerBoard[1, 3].Low = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[1, 3].Low = 0;
+        }
+        if ((PlayerBoard[1, 3].High == 0) && (PlayerBoard[1, 3].Medium == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[1, 3].Medium = 1;
+            }
+            else
+            {
+                PlayerBoard[1, 3].Medium = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[1, 3].Medium = 0;
+        }
+        if (PlayerBoard[1, 3].High == 0)
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[1, 3].High = 1;
+            }
+            else
+            {
+                PlayerBoard[1, 3].High = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[1, 3].High = 0;
+        }
+        //Row 2
+        // column 0
+        if ((PlayerBoard[2, 0].High == 0) && (PlayerBoard[2, 0].Medium == 0) && (PlayerBoard[2, 0].Low == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[2, 0].Low = 1;
+            }
+            else
+            {
+                PlayerBoard[2, 0].Low = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[2, 0].Low = 0;
+        }
+        if ((PlayerBoard[2, 0].High == 0) && (PlayerBoard[2, 0].Medium == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[2, 0].Medium = 1;
+            }
+            else
+            {
+                PlayerBoard[2, 0].Medium = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[2, 0].Medium = 0;
+        }
+        if (PlayerBoard[2, 0].High == 0)
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[2, 0].High = 1;
+            }
+            else
+            {
+                PlayerBoard[2, 0].High = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[2, 0].High = 0;
+        }
+        //column 1
+        if ((PlayerBoard[2, 1].High == 0) && (PlayerBoard[2, 1].Medium == 0) && (PlayerBoard[2, 1].Low == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[2, 1].Low = 1;
+            }
+            else
+            {
+                PlayerBoard[2, 1].Low = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[2, 1].Low = 0;
+        }
+        if ((PlayerBoard[2, 1].High == 0) && (PlayerBoard[2, 1].Medium == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[2, 1].Medium = 1;
+            }
+            else
+            {
+                PlayerBoard[2, 1].Medium = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[2, 1].Medium = 0;
+        }
+        if (PlayerBoard[2, 1].High == 0)
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[2, 1].High = 1;
+            }
+            else
+            {
+                PlayerBoard[2, 1].High = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[2, 1].High = 0;
+        }
+        //column 2
+        if ((PlayerBoard[2, 2].High == 0) && (PlayerBoard[2, 2].Medium == 0) && (PlayerBoard[2, 2].Low == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[2, 2].Low = 1;
+            }
+            else
+            {
+                PlayerBoard[2, 2].Low = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[2, 2].Low = 0;
+        }
+        if ((PlayerBoard[2, 2].High == 0) && (PlayerBoard[2, 2].Medium == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[2, 2].Medium = 1;
+            }
+            else
+            {
+                PlayerBoard[2, 2].Medium = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[2, 2].Medium = 0;
+        }
+        if (PlayerBoard[2, 2].High == 0)
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[2, 2].High = 1;
+            }
+            else
+            {
+                PlayerBoard[2, 2].High = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[2, 2].High = 0;
+        }
+        //column 3
+        if ((PlayerBoard[2, 3].High == 0) && (PlayerBoard[2, 3].Medium == 0) && (PlayerBoard[2, 3].Low == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[2, 3].Low = 1;
+            }
+            else
+            {
+                PlayerBoard[2, 3].Low = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[2, 3].Low = 0;
+        }
+        if ((PlayerBoard[2, 3].High == 0) && (PlayerBoard[2, 3].Medium == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[2, 3].Medium = 1;
+            }
+            else
+            {
+                PlayerBoard[2, 3].Medium = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[2, 3].Medium = 0;
+        }
+        if (PlayerBoard[2, 3].High == 0)
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[2, 3].High = 1;
+            }
+            else
+            {
+                PlayerBoard[2, 3].High = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[2, 3].High = 0;
+        }
+        //Row 3
+        // column 0
+        if ((PlayerBoard[3, 0].High == 0) && (PlayerBoard[3, 0].Medium == 0) && (PlayerBoard[3, 0].Low == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[3, 0].Low = 1;
+            }
+            else
+            {
+                PlayerBoard[3, 0].Low = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[3, 0].Low = 0;
+        }
+        if ((PlayerBoard[3, 0].High == 0) && (PlayerBoard[3, 0].Medium == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[3, 0].Medium = 1;
+            }
+            else
+            {
+                PlayerBoard[3, 0].Medium = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[3, 0].Medium = 0;
+        }
+        if (PlayerBoard[3, 0].High == 0)
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[3, 0].High = 1;
+            }
+            else
+            {
+                PlayerBoard[3, 0].High = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[3, 0].High = 0;
+        }
+        //column 1
+        if ((PlayerBoard[3, 1].High == 0) && (PlayerBoard[3, 1].Medium == 0) && (PlayerBoard[3, 1].Low == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[3, 1].Low = 1;
+            }
+            else
+            {
+                PlayerBoard[3, 1].Low = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[3, 1].Low = 0;
+        }
+        if ((PlayerBoard[3, 1].High == 0) && (PlayerBoard[3, 1].Medium == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[3, 1].Medium = 1;
+            }
+            else
+            {
+                PlayerBoard[3, 1].Medium = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[3, 1].Medium = 0;
+        }
+        if (PlayerBoard[3, 1].High == 0)
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[3, 1].High = 1;
+            }
+            else
+            {
+                PlayerBoard[3, 1].High = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[3, 1].High = 0;
+        }
+        //column 2
+        if ((PlayerBoard[3, 2].High == 0) && (PlayerBoard[3, 2].Medium == 0) && (PlayerBoard[3, 2].Low == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[3, 2].Low = 1;
+            }
+            else
+            {
+                PlayerBoard[3, 2].Low = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[3, 2].Low = 0;
+        }
+        if ((PlayerBoard[3, 2].High == 0) && (PlayerBoard[3, 2].Medium == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[3, 2].Medium = 1;
+            }
+            else
+            {
+                PlayerBoard[3, 2].Medium = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[3, 2].Medium = 0;
+        }
+        if (PlayerBoard[3, 2].High == 0)
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[3, 2].High = 1;
+            }
+            else
+            {
+                PlayerBoard[3, 2].High = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[3, 2].High = 0;
+        }
+        //column 3
+        if ((PlayerBoard[3, 3].High == 0) && (PlayerBoard[3, 3].Medium == 0) && (PlayerBoard[3, 3].Low == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[3, 3].Low = 1;
+            }
+            else
+            {
+                PlayerBoard[3, 3].Low = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[3, 3].Low = 0;
+        }
+        if ((PlayerBoard[3, 3].High == 0) && (PlayerBoard[3, 3].Medium == 0))
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[3, 3].Medium = 1;
+            }
+            else
+            {
+                PlayerBoard[3, 3].Medium = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[3, 3].Medium = 0;
+        }
+        if (PlayerBoard[3, 3].High == 0)
+        {
+            if (PlayerOneTurn)
+            {
+                PlayerBoard[3, 3].High = 1;
+            }
+            else
+            {
+                PlayerBoard[3, 3].High = 2;
+            }
+            value += Moves(!PlayerOneTurn, PlayerBoard);
+            PlayerBoard[3, 3].High = 0;
+        }
+        
         return value;
     }
 
