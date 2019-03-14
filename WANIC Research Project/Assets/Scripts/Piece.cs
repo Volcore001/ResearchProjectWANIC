@@ -14,7 +14,9 @@ public class Piece : MonoBehaviour, IPointerEnterHandler
 
     [Tooltip("The corresponding place of the piece, either 0 - 15, representing the 16 spaces on the board.")]
     public int Index;
-    public int PlayerTurn = 1;
+    [HideInInspector]
+    public Color NewColor = new Color();
+
     // Use this for initialization
     void Start () {
 		
@@ -29,8 +31,7 @@ public class Piece : MonoBehaviour, IPointerEnterHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Color NewColor = new Color();
-        switch (PlayerTurn)
+        switch (Board.PlayerTurn)
         {
             case 1:
                 NewColor = new Color(255, 0, 0);
