@@ -166,7 +166,7 @@ MonoBehaviour:
   Player: 0
   Size: 2
   Index: 6
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &2885014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,7 +311,7 @@ MonoBehaviour:
   Player: 0
   Size: 2
   Index: 13
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &19205644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,7 +456,7 @@ MonoBehaviour:
   Player: 0
   Size: 3
   Index: 15
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &57137580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,7 +601,7 @@ MonoBehaviour:
   Player: 0
   Size: 3
   Index: 8
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &91267867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -837,7 +837,7 @@ MonoBehaviour:
   Player: 0
   Size: 3
   Index: 4
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &121536787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -982,7 +982,7 @@ MonoBehaviour:
   Player: 0
   Size: 2
   Index: 7
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &129078609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1127,7 +1127,7 @@ MonoBehaviour:
   Player: 0
   Size: 2
   Index: 2
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &198951181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1272,7 +1272,7 @@ MonoBehaviour:
   Player: 0
   Size: 3
   Index: 6
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &206746383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1417,7 +1417,7 @@ MonoBehaviour:
   Player: 0
   Size: 2
   Index: 10
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &266560321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1643,7 +1643,7 @@ MonoBehaviour:
   Player: 0
   Size: 1
   Index: 0
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &362058904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1788,7 +1788,7 @@ MonoBehaviour:
   Player: 0
   Size: 2
   Index: 1
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &440434964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1933,7 +1933,7 @@ MonoBehaviour:
   Player: 0
   Size: 1
   Index: 14
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &451235250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2078,7 +2078,7 @@ MonoBehaviour:
   Player: 0
   Size: 1
   Index: 6
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &484576511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2223,7 +2223,7 @@ MonoBehaviour:
   Player: 0
   Size: 1
   Index: 4
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &508544085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2368,7 +2368,7 @@ MonoBehaviour:
   Player: 0
   Size: 3
   Index: 5
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &531732736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2513,7 +2513,7 @@ MonoBehaviour:
   Player: 0
   Size: 3
   Index: 13
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &622689777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2658,7 +2658,7 @@ MonoBehaviour:
   Player: 0
   Size: 3
   Index: 10
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &637772607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2803,7 +2803,7 @@ MonoBehaviour:
   Player: 0
   Size: 2
   Index: 9
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &823898282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2948,7 +2948,7 @@ MonoBehaviour:
   Player: 0
   Size: 3
   Index: 3
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &825796761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3240,7 +3240,7 @@ MonoBehaviour:
   Player: 0
   Size: 2
   Index: 3
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &898196486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3385,7 +3385,7 @@ MonoBehaviour:
   Player: 0
   Size: 2
   Index: 12
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1006041014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3530,7 +3530,7 @@ MonoBehaviour:
   Player: 0
   Size: 1
   Index: 9
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1012225626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3675,7 +3675,7 @@ MonoBehaviour:
   Player: 0
   Size: 1
   Index: 5
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1015524645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3820,7 +3820,7 @@ MonoBehaviour:
   Player: 0
   Size: 1
   Index: 3
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1017277582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3965,7 +3965,7 @@ MonoBehaviour:
   Player: 0
   Size: 1
   Index: 12
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1038391073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4110,7 +4110,7 @@ MonoBehaviour:
   Player: 0
   Size: 1
   Index: 7
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1187330700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4255,7 +4255,7 @@ MonoBehaviour:
   Player: 0
   Size: 3
   Index: 2
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1274184564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4400,7 +4400,7 @@ MonoBehaviour:
   Player: 0
   Size: 2
   Index: 0
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1280735355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4601,7 +4601,7 @@ MonoBehaviour:
   Player: 0
   Size: 3
   Index: 9
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1459067157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6617,7 +6617,7 @@ Tilemap:
   - m_RefCount: 201
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_Origin: {x: -24, y: -11, z: 0}
   m_Size: {x: 49, y: 22, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -6693,7 +6693,7 @@ MonoBehaviour:
   Player: 0
   Size: 1
   Index: 11
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1532132820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6838,7 +6838,7 @@ MonoBehaviour:
   Player: 0
   Size: 3
   Index: 7
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1553345038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6983,7 +6983,7 @@ MonoBehaviour:
   Player: 0
   Size: 3
   Index: 11
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1578372320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7257,7 +7257,7 @@ MonoBehaviour:
   Player: 0
   Size: 3
   Index: 0
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1613754090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7402,7 +7402,7 @@ MonoBehaviour:
   Player: 0
   Size: 2
   Index: 4
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1700349035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7547,7 +7547,7 @@ MonoBehaviour:
   Player: 0
   Size: 1
   Index: 10
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1705132375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7692,7 +7692,7 @@ MonoBehaviour:
   Player: 0
   Size: 1
   Index: 8
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1730607753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7903,7 +7903,7 @@ MonoBehaviour:
   Player: 0
   Size: 1
   Index: 2
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1801054394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8048,7 +8048,7 @@ MonoBehaviour:
   Player: 0
   Size: 2
   Index: 11
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1805089542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8193,7 +8193,7 @@ MonoBehaviour:
   Player: 0
   Size: 1
   Index: 15
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1842542939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8338,7 +8338,7 @@ MonoBehaviour:
   Player: 0
   Size: 3
   Index: 14
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1883401672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8483,7 +8483,7 @@ MonoBehaviour:
   Player: 0
   Size: 2
   Index: 14
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1906209048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8628,7 +8628,7 @@ MonoBehaviour:
   Player: 0
   Size: 3
   Index: 12
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1917677060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8817,7 +8817,7 @@ MonoBehaviour:
   Player: 0
   Size: 1
   Index: 13
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1950618967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8962,7 +8962,7 @@ MonoBehaviour:
   Player: 0
   Size: 2
   Index: 15
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &2001653249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9107,7 +9107,7 @@ MonoBehaviour:
   Player: 0
   Size: 2
   Index: 8
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &2034549091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9252,7 +9252,7 @@ MonoBehaviour:
   Player: 0
   Size: 2
   Index: 5
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &2063681093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9397,7 +9397,7 @@ MonoBehaviour:
   Player: 0
   Size: 1
   Index: 1
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &2090206981
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9542,7 +9542,7 @@ MonoBehaviour:
   Player: 0
   Size: 3
   Index: 1
-  PlayerTurn: 1
+  NewColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &2107416659
 MonoBehaviour:
   m_ObjectHideFlags: 0
