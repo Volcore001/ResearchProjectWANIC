@@ -47,6 +47,8 @@ public class Piece : MonoBehaviour, IPointerEnterHandler
         }
         ColorBlock colorVar = GetComponent<Button>().colors;
         colorVar.highlightedColor = NewColor;
+        //Debug.Log("Player: " + Player);
+        //Debug.Log("PlayerTurn: " + Board.PlayerTurn);
         GetComponent<Button>().colors = colorVar;
     }
 }

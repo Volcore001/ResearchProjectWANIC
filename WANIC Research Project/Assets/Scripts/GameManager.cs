@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour {
         //is there a victor
         if(Check() == 0)
         {
+            /*
             int P1 = 0;
             int P2 = 0;
             for (int i = 0; i < 4; i++)
@@ -75,24 +76,27 @@ public class GameManager : MonoBehaviour {
             {
                 //50/50 chance
                 Debug.Log("50/50 chance" + victor.ToString());
-            }
+            }*/
 
+            Node node = new Node();
+            node.Tree();
         }
         else
         {
             if(Check() == 1)
             {
                 //Player one
-                Debug.Log("Player One");
+                Debug.Log("Player One ERROR");
             }
             if (Check() == 2)
             {
                 //Player two
-                Debug.Log("Player Two");
+                Debug.Log("Player Two ERROR");
             }
         }
     }
 
+    /*
     Vector2 Moves(bool PlayerOneTurn, Cell[,] board)
     {
         Cell[,] PlayerBoard = new Cell[4,4];
@@ -822,9 +826,9 @@ public class GameManager : MonoBehaviour {
         }
         
         return value;
-    }
+    }*/
 
-    int Check ()
+    public int Check ()
     {
         int[,] board2 = new int[4,4];
         for (int i = 0; i < 4; i++)
@@ -847,18 +851,24 @@ public class GameManager : MonoBehaviour {
         }
 
         for (int i = 0; i < 4; i++)
-        { 
+        {
+            //Debug.Log(board2[0, 0] + " " + board2[1, 0] + " " + board2[2, 0] + " " + board2[3, 0]);
+            //Debug.Log(board2[0, 1] + " " + board2[1, 1] + " " + board2[2, 1] + " " + board2[3, 1]);
+            //Debug.Log(board2[0, 2] + " " + board2[1, 2] + " " + board2[2, 2] + " " + board2[3, 2]);
+            //Debug.Log(board2[0, 3] + " " + board2[1, 3] + " " + board2[2, 3] + " " + board2[3, 3]);
             //Horizontal ----
             if (board2[i, 0] == board2[i, 1] && board2[i, 1] == board2[i, 2] && board2[i, 2] == board2[i, 3])
             {            
                 if(board2[i, 0] == 1)
                 {
                     //Player One Wins
+                    Debug.Log("P1 Horizontal win " + i);
                     return 1;
                 }
                 else if(board2[i, 0] == 2)
                 {
                     //Player Two Wins
+                    Debug.Log("P2 Horizontal win " + i);
                     return 2;
                 }
             }
@@ -868,11 +878,13 @@ public class GameManager : MonoBehaviour {
                 if (board2[0, i] == 1)
                 {
                     //Player One Wins
+                    Debug.Log("P1 Vertical win " + i);
                     return 1;
                 }
                 else if (board2[0, i] == 2)
                 {
                     //Player Two Wins
+                    Debug.Log("P2 Vertical win " + i);
                     return 2;
                 }
             }
@@ -883,11 +895,13 @@ public class GameManager : MonoBehaviour {
             if (board2[0, 0] == 1)
             {
                 //Player One Wins
+                Debug.Log("P1 Diagonal \\ win  [0,0]");
                 return 1;
             }
             else if (board2[0, 0] == 2)
             {
                 //Player Two Wins
+                Debug.Log("P2 Diagonal \\ win  [0,0]");
                 return 2;
             }
         }
@@ -897,11 +911,13 @@ public class GameManager : MonoBehaviour {
             if (board2[3, 0] == 1)
             {
                 //Player One Wins
+                Debug.Log("P1 Diagonal / win  [3,0]");
                 return 1;
             }
             else if (board2[3, 0] == 2)
             {
                 //Player Two Wins
+                Debug.Log("P1 Diagonal / win  [3,0]");
                 return 2;
             }
         }
@@ -914,7 +930,8 @@ public class GameManager : MonoBehaviour {
                 {
                     full = false;
                 }
-                Debug.Log(Board.Get()[i, j].High.ToString());
+                
+                //Debug.Log(Board.Get()[i, j].High.ToString());
             }
         }
         if(full)

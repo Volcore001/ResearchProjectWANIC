@@ -22,6 +22,8 @@ public class Board : MonoBehaviour {
         int y = 0;
         int val = p.Size;
         int index = p.Index;
+        p.Player = Board.PlayerTurn;
+        //Debug.Log(p.Player);
         if (p.Player == 2)
             val += 3;
         x = index % 4;
