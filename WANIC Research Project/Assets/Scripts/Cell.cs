@@ -70,13 +70,13 @@ public struct Cell {
                 if (board2[i, 0] == 1)
                 {
                     //Player One Wins
-                    Debug.Log("P1 Vertical win " + i);
+                    //Debug.Log("P1 Vertical win " + i);
                     return 1;
                 }
                 else if (board2[i, 0] == 2)
                 {
                     //Player Two Wins
-                    Debug.Log("P2 Vertical win " + i);
+                    //Debug.Log("P2 Vertical win " + i);
                     return 2;
                 }
             }
@@ -86,13 +86,13 @@ public struct Cell {
                 if (board2[0, i] == 1)
                 {
                     //Player One Wins
-                    Debug.Log("P1 Horizontal win " + i);
+                    //Debug.Log("P1 Horizontal win " + i);
                     return 1;
                 }
                 else if (board2[0, i] == 2)
                 {
                     //Player Two Wins
-                    Debug.Log("P2 Horizontal win " + i);
+                    //Debug.Log("P2 Horizontal win " + i);
                     return 2;
                 }
             }
@@ -103,13 +103,13 @@ public struct Cell {
             if (board2[0, 0] == 1)
             {
                 //Player One Wins
-                Debug.Log("P1 Diagonal \\ win  [0,0]");
+                //Debug.Log("P1 Diagonal \\ win  [0,0]");
                 return 1;
             }
             else if (board2[0, 0] == 2)
             {
                 //Player Two Wins
-                Debug.Log("P2 Diagonal \\ win  [0,0]");
+                //Debug.Log("P2 Diagonal \\ win  [0,0]");
                 return 2;
             }
         }
@@ -119,13 +119,13 @@ public struct Cell {
             if (board2[3, 0] == 1)
             {
                 //Player One Wins
-                Debug.Log("P1 Diagonal / win  [3,0]");
+                //Debug.Log("P1 Diagonal / win  [3,0]");
                 return 1;
             }
             else if (board2[3, 0] == 2)
             {
                 //Player Two Wins
-                Debug.Log("P2 Diagonal / win  [3,0]");
+                //Debug.Log("P2 Diagonal / win  [3,0]");
                 return 2;
             }
         }

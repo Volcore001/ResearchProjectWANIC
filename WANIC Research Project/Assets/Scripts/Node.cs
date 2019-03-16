@@ -11,12 +11,17 @@ public class Node
     public Node ParentNode;
     int Playerturn;
 
+    int P1 = 1;
+    int P2 = 2;
+    int P0 = 0;
 
 
     public void Tree ()
     {
         this.intialize();
         this.Branches();
+        Debug.Log("Player One Wins: " + PlayerOneWin);
+        Debug.Log("Player Two Wins: " + PlayerTwoWin);
     }
     void Branches ()
     {
@@ -28,11 +33,11 @@ public class Node
         {
             for (int j = 0; j < 4; ++j)
             {
-                if (CurBoard[i, j].High == 0)
+                if (CurBoard[i, j].High == P0)
                 {
                     this.AddChildNode();
                     check++;
-                }/*
+                }
                 if ((CurBoard[i, j].High == 0) && (CurBoard[i, j].Medium == 0))
                 {
                     this.AddChildNode();
@@ -42,7 +47,7 @@ public class Node
                 {
                     this.AddChildNode();
                     check++;
-                }*/
+                }
             }
         }
         //Moves the peices per children
@@ -51,7 +56,6 @@ public class Node
         {
             for (int j = 0; j < 4; ++j)
             {
-                /*
                 //low
                 if ((CurBoard[i, j].High == 0) && (CurBoard[i, j].Medium == 0) && (CurBoard[i, j].Low == 0))
                 {
@@ -83,21 +87,21 @@ public class Node
                         this.GetNode(index).Playerturn = 1;
                         this.GetNode(index).CurBoard[i, j].Medium = 2;
                     }
-                }*/
+                }
                 //High
-                if (CurBoard[i, j].High == 0)
+                if (CurBoard[i, j].High == P0)
                 {
                     index++;
                     //Debug.Log("High [" + i + ", " + j + "]");
-                    if (this.GetNode(index).Playerturn == 1)
+                    if (this.GetNode(index).Playerturn == P1)
                     {
-                        this.GetNode(index).Playerturn = 2;
-                        this.GetNode(index).CurBoard[i, j].High = 1;
+                        this.GetNode(index).Playerturn = P2;
+                        this.GetNode(index).CurBoard[i, j].High = P1;
                     }
                     else
                     {
-                        this.GetNode(index).Playerturn = 1;
-                        this.GetNode(index).CurBoard[i, j].High = 2;
+                        this.GetNode(index).Playerturn = P1;
+                        this.GetNode(index).CurBoard[i, j].High = P2;
                     }
                 }
 
@@ -109,16 +113,36 @@ public class Node
         {
             for (int i = 0; i <= index; ++i)
             {
-                this.GetNode(i).Branches();
+                if (Cell.Check(CurBoard) == P0)
+                {
+                    this.GetNode(i).Branches();
+                }
             }
-            Cell.Check(CurBoard);
-        }else
+            if(Cell.Check(CurBoard) == P1)
+            {
+                PlayerOneWin += 1;
+                //Debug.Log("Player One UP = " + PlayerOneWin);
+            }
+            else if (Cell.Check(CurBoard) == P2)
+            {
+                PlayerTwoWin += 1;
+                //Debug.Log("Player Two UP = " + PlayerTwoWin);
+            }
+        }
+        else
         {
             Debug.Log("Node Branch Error:" + index + "!=" + check);
         }
         if((index < 0) && (check < 0))
         {
-            Debug.Log("End Of Branch");
+            //Debug.Log("End Of Branch"); 
+        }
+        if (ParentNode != null)
+        {
+            ParentNode.PlayerOneWin = ParentNode.PlayerOneWin + PlayerOneWin;
+            ParentNode.PlayerTwoWin = ParentNode.PlayerTwoWin + PlayerTwoWin;
+            //Debug.Log("End: " + PlayerOneWin + " " + PlayerTwoWin);
+            //Debug.Log("Parent: " + ParentNode.PlayerOneWin + " " + ParentNode.PlayerTwoWin);
         }
     }
     Node GetNode (int Index)
