@@ -78,6 +78,26 @@ public class GameManager : MonoBehaviour {
 
             Node node = new Node();
             node.Tree();
+            int p1 = node.PlayerOne();
+            int p2 = node.PlayerTwo();
+            if (p1 > p2)
+            {
+                TextWinDisplay.SetActive(true);
+                TextWinDisplay.GetComponent<Text>().text = "Player 1 wins!";
+                TextWinDisplay.GetComponent<Text>().color = new Color(255, 0, 0, 1);
+            }
+            else if (p1 == p2)
+            {
+                TextWinDisplay.SetActive(true);
+                TextWinDisplay.GetComponent<Text>().text = "Tie!";
+                TextWinDisplay.GetComponent<Text>().color = new Color(255, 255, 255, 1);
+            }
+            else
+            {
+                TextWinDisplay.SetActive(true);
+                TextWinDisplay.GetComponent<Text>().text = "Player 2 wins!";
+                TextWinDisplay.GetComponent<Text>().color = new Color(0, 255, 0, 1);
+            }
         }
         else
         {
@@ -85,11 +105,17 @@ public class GameManager : MonoBehaviour {
             {
                 //Player one
                 Debug.Log("Player One ERROR");
+                TextWinDisplay.SetActive(true);
+                TextWinDisplay.GetComponent<Text>().text = "Player 1 wins!";
+                TextWinDisplay.GetComponent<Text>().color = new Color(255, 0, 0, 1);
             }
             if (Check() == 2)
             {
                 //Player two
                 Debug.Log("Player Two ERROR");
+                TextWinDisplay.SetActive(true);
+                TextWinDisplay.GetComponent<Text>().text = "Player 2 wins!";
+                TextWinDisplay.GetComponent<Text>().color = new Color(0, 255, 0, 1);
             }
         }
     }

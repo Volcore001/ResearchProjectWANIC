@@ -4,4 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Will's Scene.unity
+    guid: e0e7223f2b343564986d15887ba66f1a
+  m_configObjects: {}
