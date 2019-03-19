@@ -40,7 +40,7 @@ public class Node
         }
                 
     }
-    void CominatorialGame ()
+    public int CominatorialGame ()
     {
         int Index = -1;
         int WinRatio = 0;
@@ -68,21 +68,24 @@ public class Node
       }
       if (Index == -1)
       {
-          if (this.PlayerOneWin == 1)
+          if (this.PlayerOneWin >= 1 && this.PlayerTwoWin == 0)
           {
               Debug.Log("Player One Win");
+                return 1;
           }
-          else if (this.PlayerTwoWin == 1)
+          else if (this.PlayerTwoWin >= 1 && this.PlayerOneWin == 0)
           {
               Debug.Log("Player Two Win");
+                return 2;
           }
           else
           {
               Debug.Log("Tie");
+                return 0;
           }
       } else
       {
-          this.GetNode(Index).CominatorialGame();
+          return this.GetNode(Index).CominatorialGame();
       }
       
     }
