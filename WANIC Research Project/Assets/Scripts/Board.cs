@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class Board : MonoBehaviour {
 
     public static Cell[,] GameBoard = new Cell[4, 4];
@@ -16,7 +17,7 @@ public class Board : MonoBehaviour {
     {
         //Debug.Log("Board 4, 4: " + GameBoard[3,3].ToString());
         if (Input.GetKeyDown("r"))
-            Application.LoadLevel(Application.loadedLevel);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void UpdateCell(Piece p)
     {

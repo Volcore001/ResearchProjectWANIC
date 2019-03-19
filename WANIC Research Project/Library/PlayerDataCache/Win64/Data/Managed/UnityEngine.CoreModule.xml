@@ -5973,7 +5973,7 @@ The default value is Camera.MonoOrStereoscopicEye.Left, so Camera.MonoOrStereosc
       <summary>
         <para>Specify a custom cursor that you wish to use as a cursor.</para>
       </summary>
-      <param name="texture">The texture to use for the cursor. To use a texture, you must first import it with `Read/Write`enabled. Alternatively, you can use the default cursor import setting. If you created your cursor texture from code, it must be in RGBA32 format, have alphaIsTransparency enabled, and have no mip chain. To use the default cursor, set the texture to `Null`.</param>
+      <param name="texture">The texture to use for the cursor or null to set the default cursor. Note that a texture needs to be imported with "Read/Write enabled" in the texture importer (or using the "Cursor" defaults), in order to be used as a cursor.</param>
       <param name="hotspot">The offset from the top left of the texture to use as the target point (must be within the bounds of the cursor).</param>
       <param name="cursorMode">Allow this cursor to render as a hardware cursor on supported platforms, or force software cursor.</param>
     </member>
@@ -7823,41 +7823,6 @@ Note: this value can be set in the Lighting Window UI and it is serialized, that
     <member name="F:UnityEngine.Experimental.LowLevel.PlayerLoopSystem.updateFunction">
       <summary>
         <para>A native engine system. To get a valid value for this, you must copy it from one of the PlayerLoopSystems returned by PlayerLoop.GetDefaultPlayerLoop.</para>
-      </summary>
-    </member>
-    <member name="T:UnityEngine.Experimental.Networking.PlayerConnection.ConnectionTarget">
-      <summary>
-        <para>The type of the connected target.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.Experimental.Networking.PlayerConnection.ConnectionTarget.Editor">
-      <summary>
-        <para>The connected target is an Editor.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.Experimental.Networking.PlayerConnection.ConnectionTarget.None">
-      <summary>
-        <para>No target is connected, this is only possible in a Player.</para>
-      </summary>
-    </member>
-    <member name="F:UnityEngine.Experimental.Networking.PlayerConnection.ConnectionTarget.Player">
-      <summary>
-        <para>The connected target is a Player.</para>
-      </summary>
-    </member>
-    <member name="?:UnityEngine.Experimental.Networking.PlayerConnection.IConnectionState">
-      <summary>
-        <para>The state of an Editor-to-Player or Editor-to-Editor connection to be used in Experimental.Networking.PlayerConnection.EditorGUI.AttachToPlayerDropdown or Experimental.Networking.PlayerConnection.EditorGUILayout.AttachToPlayerDropdown.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEngine.Experimental.Networking.PlayerConnection.IConnectionState.connectedToTarget">
-      <summary>
-        <para>Supplies the type of the established connection, as in whether the target is a Player or an Editor.</para>
-      </summary>
-    </member>
-    <member name="P:UnityEngine.Experimental.Networking.PlayerConnection.IConnectionState.connectionName">
-      <summary>
-        <para>The name of the connected target.</para>
       </summary>
     </member>
     <member name="T:UnityEngine.Experimental.Playables.CameraPlayable">
@@ -19137,7 +19102,7 @@ Only usable on Android, Windows Phone or Windows Tablets.</para>
     </member>
     <member name="P:UnityEngine.Mesh.isReadable">
       <summary>
-        <para>Returns true if the Mesh is read/write enabled, or false if it is not.</para>
+        <para>Returns a bool indicated whether the mesh is read/write enabled.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Mesh.normals">
@@ -20009,9 +19974,9 @@ The Player ID is always 1, because only one Editor can be connected.</param>
     </member>
     <member name="M:UnityEngine.Object.DontDestroyOnLoad(UnityEngine.Object)">
       <summary>
-        <para>Do not destroy the target Object when loading a new Scene.</para>
+        <para>Makes the object target not be destroyed automatically when loading a new Scene.</para>
       </summary>
-      <param name="target">An Object not destroyed on Scene change.</param>
+      <param name="target">The object which is not destroyed on Scene change.</param>
     </member>
     <member name="M:UnityEngine.Object.FindObjectOfType(System.Type)">
       <summary>
@@ -29531,11 +29496,6 @@ A Scene may be invalid if, for example, you tried to open a Scene that does not 
         <para>The created ScriptableObject.</para>
       </returns>
     </member>
-    <member name="T:UnityEngine.Scripting.AlwaysLinkAssemblyAttribute">
-      <summary>
-        <para>Ensure an assembly is always processed during managed code stripping.</para>
-      </summary>
-    </member>
     <member name="T:UnityEngine.Scripting.GarbageCollector">
       <summary>
         <para>Experimental API to control the garbage collector on the Mono and IL2CPP scripting backends.</para>
@@ -31051,14 +31011,14 @@ Returns NULL if there is no associated alpha texture for the source sprite. This
       <summary>
         <para>StaticBatchingUtility.Combine prepares all children of the staticBatchRoot for static batching.</para>
       </summary>
-      <param name="staticBatchRoot">The GameObject that should become the root of the combined batch.</param>
+      <param name="staticBatchRoot"></param>
     </member>
     <member name="M:UnityEngine.StaticBatchingUtility.Combine(UnityEngine.GameObject[],UnityEngine.GameObject)">
       <summary>
-        <para>StaticBatchingUtility.Combine prepares all GameObjects contained in gos for static batching. staticBatchRoot is treated as their parent.</para>
+        <para>StaticBatchingUtility.Combine prepares all gos for static batching. staticBatchRoot is treated as their parent.</para>
       </summary>
-      <param name="gos">The GameObjects to prepare for static batching.</param>
-      <param name="staticBatchRoot">The GameObject that should become the root of the combined batch.</param>
+      <param name="gos"></param>
+      <param name="staticBatchRoot"></param>
     </member>
     <member name="T:UnityEngine.StereoTargetEyeMask">
       <summary>
@@ -31394,12 +31354,13 @@ Note that GPUFences are only supported on PS4.</para>
         <para>This property is true if the current platform uses a reversed depth buffer (where values range from 1 at the near plane and 0 at far plane), and false if the depth buffer is normal (0 is near, 1 is far). (Read Only)</para>
       </summary>
     </member>
-    <member name="M:UnityEngine.SystemInfo.IsFormatSupported">
+    <member name="M:UnityEngine.SystemInfo.IsFormatSupported(UnityEngine.Experimental.Rendering.GraphicsFormat,UnityEngine.Experimental.Rendering.FormatUsage)">
       <summary>
         <para>Verifies that the specified graphics format is supported for the specified usage.</para>
       </summary>
-      <param name="Format">The Experimental.Rendering.GraphicsFormat format to look up.</param>
-      <param name="Usage">The Experimental.Rendering.FormatUsage usage to look up.</param>
+      <param name="format">The GraphicsFormat format to look up.</param>
+      <param name="format">The FormatUsage usage to look up.</param>
+      <param name="usage"></param>
       <returns>
         <para>Returns true if the format is supported for the specific usage. Returns false otherwise.</para>
       </returns>
@@ -33412,7 +33373,7 @@ Useful for restarting a trail from a new position.</para>
     </member>
     <member name="P:UnityEngine.Transform.position">
       <summary>
-        <para>The world space position of the Transform.</para>
+        <para>The position of the transform in world space.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Transform.right">
