@@ -43,24 +43,31 @@ public class Node
     public int CominatorialGame ()
     {
         int Index = -1;
-        int WinRatio = 0;
-        
-       for (int i = 0; i <= this.MaxIndex; i++)
+        float WinRatio = -10;
+
+        Debug.Log("New node");
+
+        for (int i = 0; i <= this.MaxIndex; i++)
        {
             if (this.GetNode(i).PlayerOneWin != 0 && this.GetNode(i).PlayerTwoWin != 0)
             {
+                float P1W = this.GetNode(i).PlayerOneWin;
+                float P2W = this.GetNode(i).PlayerTwoWin;
+
                 if (this.Playerturn == P1)
                 {
-                    if (WinRatio < (this.GetNode(i).PlayerOneWin / this.GetNode(i).PlayerTwoWin))
+                    Debug.Log("Ratio: (P1W / P2W)" + (P1W / P2W));
+                    if (WinRatio < (P1W / P2W))
                     {
-                        WinRatio = (this.GetNode(i).PlayerOneWin / this.GetNode(i).PlayerTwoWin);
+                        WinRatio = (P1W / P2W);
                         Index = i;
                     }
                 } else if (this.Playerturn == P2)
                 {
-                    if (WinRatio < (this.GetNode(i).PlayerTwoWin / this.GetNode(i).PlayerOneWin))
+                    Debug.Log("Ratio: (P2W / P1W)" + (P2W / P1W));
+                    if (WinRatio < (P2W / P1W))
                     {
-                        WinRatio = (this.GetNode(i).PlayerTwoWin / this.GetNode(i).PlayerOneWin);
+                        WinRatio = (P2W / P1W);
                         Index = i;
                     }
                 }
@@ -70,22 +77,39 @@ public class Node
       {
           if (this.PlayerOneWin >= 1 && this.PlayerTwoWin == 0)
           {
-              Debug.Log("Player One Win");
+              Debug.Log("Player One Win Com");
                 return 1;
           }
           else if (this.PlayerTwoWin >= 1 && this.PlayerOneWin == 0)
           {
-              Debug.Log("Player Two Win");
+              Debug.Log("Player Two Win Com");
                 return 2;
           }
-          else
+          else if (this.PlayerOneWin == 0 && this.PlayerTwoWin == 0)
           {
-              Debug.Log("Tie");
+              Debug.Log("Tie Com");
+                Debug.Log("Last 1: " + this.ParentNode.PlayerOneWin);
+                Debug.Log("Last 2: " + this.ParentNode.PlayerTwoWin);
+                Debug.Log("Now 1: " + this.PlayerOneWin);
+                Debug.Log("Now 2: " + this.PlayerTwoWin);
                 return 0;
           }
-      } else
+          else
+            {
+                if(this.Playerturn == 1)
+                {
+                    Debug.Log("Player Two Win Com");
+                    return 2;
+                }
+                else
+                {
+                    Debug.Log("Player One Win Com");
+                    return 1;
+                }
+            }
+      }else
       {
-          return this.GetNode(Index).CominatorialGame();
+            return this.GetNode(Index).CominatorialGame();
       }
       
     }

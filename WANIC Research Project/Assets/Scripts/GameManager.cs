@@ -80,22 +80,29 @@ public class GameManager : MonoBehaviour {
             node.Tree();
             int p1 = node.PlayerOne();
             int p2 = node.PlayerTwo();
-            if (p1 > p2)
+
+            int Win = node.CominatorialGame();
+            if (Win == 1)
             {
                 TextWinDisplay.SetActive(true);
                 TextWinDisplay.GetComponent<Text>().text = "Player 1 wins!";
                 TextWinDisplay.GetComponent<Text>().color = new Color(255, 0, 0, 1);
             }
-            else if (p1 == p2)
+            else if (Win == 0)
             {
                 TextWinDisplay.SetActive(true);
                 TextWinDisplay.GetComponent<Text>().text = "Tie!";
                 TextWinDisplay.GetComponent<Text>().color = new Color(255, 255, 255, 1);
             }
-            else
+            else if (Win == 2)
             {
                 TextWinDisplay.SetActive(true);
                 TextWinDisplay.GetComponent<Text>().text = "Player 2 wins!";
+                TextWinDisplay.GetComponent<Text>().color = new Color(0, 0, 250, 1);
+            }else
+            {
+                TextWinDisplay.SetActive(true);
+                TextWinDisplay.GetComponent<Text>().text = "ERROR!";
                 TextWinDisplay.GetComponent<Text>().color = new Color(0, 255, 0, 1);
             }
         }

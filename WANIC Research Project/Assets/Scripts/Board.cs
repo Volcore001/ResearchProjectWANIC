@@ -15,6 +15,8 @@ public class Board : MonoBehaviour {
     public void Update()
     {
         //Debug.Log("Board 4, 4: " + GameBoard[3,3].ToString());
+        if (Input.GetKeyDown("r"))
+            Application.LoadLevel(Application.loadedLevel);
     }
     public void UpdateCell(Piece p)
     {
